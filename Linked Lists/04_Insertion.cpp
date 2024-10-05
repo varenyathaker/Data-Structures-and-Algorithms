@@ -84,6 +84,30 @@ Node* insertK(Node* head, int element, int k  ){
     return head; 
     
 }
+
+Node* insertbforX(Node* head, int element, int k  ){
+    if(head==NULL){
+        return NULL; 
+    }
+    if(head->data == element){
+        Node* temp = new Node(element, head); 
+        return temp; 
+    }
+     
+    Node* temp  = head; 
+    while(temp->next!=NULL){
+         
+        if(temp->next->data == k ){
+            Node* newNode = new Node(element, temp->next);
+            temp->next = newNode; 
+            return head; 
+        }
+        temp = temp->next; 
+
+    }
+    return head; 
+    
+}
  
 
 int main() {
@@ -93,6 +117,7 @@ int main() {
     head = insertbeg(head, 2); 
     head = insertend(head, 7);
     head = insertK(head, 577, 2); 
+    head = insertbforX(head, 897, 577); 
     printLL(head);  
 
 }
