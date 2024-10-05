@@ -61,12 +61,38 @@ Node* insertend(Node* head, int val){
 
 }
 
+Node* insertK(Node* head, int element, int k  ){
+    if(head==NULL){
+        if(k==1) return new Node(element); 
+        else return nullptr;
+    }
+    if(k==1){
+        Node* temp = new Node(element, head); 
+    }
+    int count = 0; 
+    Node* temp  = head; 
+    while(temp!=NULL){
+        count++; 
+        if(count == k-1){
+            Node* newNode = new Node(element, temp->next);
+            temp->next = newNode; 
+            return head; 
+        }
+        temp = temp->next; 
+
+    }
+    return head; 
+    
+}
+ 
+
 int main() {
     vector <int> ans = {1, 2, 3, 4, 5}; 
     Node* head = convertToLL(ans);
     printLL(head);
     head = insertbeg(head, 2); 
     head = insertend(head, 7);
+    head = insertK(head, 577, 2); 
     printLL(head);  
 
 }
