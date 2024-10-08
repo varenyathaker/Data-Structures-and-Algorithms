@@ -31,8 +31,8 @@ Node* convertToLL (vector <int> &arr){
 }
 
 int main() {
-    vector <int> ans = {1, 2, 3, 4, 56, 7}; 
-    Node* head = convertToLL(ans); 
+    vector <int> a1 = {1, 2, 3, 4, 56, 7}; 
+    Node* head = convertToLL(a1); 
     cout << head->data << endl; 
     cout <<head->next->data << endl  ;
     return 0  ; 
